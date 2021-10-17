@@ -28,24 +28,32 @@ fighters = ['mario', 'donkey_kong', 'link', 'samus', 'dark_samus', 'yoshi', 'kir
             'wolf', 'villager', 'mega_man', 'wii_fit_trainer', 'rosalina_and_luma', 'little_mac', 'greninja',
             'mii_fighter', 'palutena', 'pac_man', 'robin', 'shulk', 'bowser_jr', 'duck_hunt', 'ryu', 'ken', 'cloud',
             'corrin', 'bayonetta', 'inkling', 'ridley', 'simon', 'richter', 'king_k_rool', 'isabelle', 'incineroar',
-            'piranha_plant', 'joker', 'hero', 'banjo_and_kazooie', 'terry', 'byleth', 'minmin', 'steve', 'sephiroth',
-            'pyra']
+            'piranha_plant', 'joker', 'dq_hero', 'banjo_and_kazooie', 'terry', 'byleth', 'minmin', 'steve', 'sephiroth',
+            'pyra', 'kazuya', 'sora']
 
 alts = ['main', 'main2', 'main3', 'main4', 'main5', 'main6', 'main7', 'main8']
 
 
 def main():
     url = "https://www.smashbros.com/assets_v2/img/fighter/"
-    for fighter in fighters:
-        if fighter != 'mii_fighter':
-            for alt in alts:
-                image_url = url + fighter + '/' + alt + '.png'
-                file_name = str("{:02d}".format(fighters.index(fighter) + 1)) + '_' + fighter + '_' + alt + '.png'
-                download_image(image_url, file_name)
-        elif fighter == 'mii_fighter':
-            image_url = url + fighter + '/' + alts[0] + '.png'
-            file_name = str("{:02d}".format(fighters.index(fighter) + 1)) + '_' + fighter + '_' + alts[0] + '.png'
-            download_image(image_url, file_name)
+    # for fighter in fighters:
+    #     if fighter != 'mii_fighter':
+    #         for alt in alts:
+    #             image_url = url + fighter + '/' + alt + '.png'
+    #             # file_name = str("{:02d}".format(fighters.index(fighter) + 1)) + '_' + fighter + '_' + alt + '.png'
+    #             file_name = fighter + '_' + alt + '.png'
+    #             download_image(image_url, file_name)
+        # elif fighter == 'mii_fighter':
+        #     image_url = url + fighter + '/' + alts[0] + '.png'
+        #     # file_name = str("{:02d}".format(fighters.index(fighter) + 1)) + '_' + fighter + '_' + alts[0] + '.png'
+        #     file_name = fighter + '_' + alts[0] + '.png'
+        #     download_image(image_url, file_name)
+
+    for alt in alts:
+        image_url = url + 'sora' + '/' + alt + '.png'
+        file_name = 'sora' + '_' + alt + '.png'
+        download_image(image_url, file_name)
+
 
 
 if __name__ == "__main__":
